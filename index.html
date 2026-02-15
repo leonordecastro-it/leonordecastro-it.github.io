@@ -4,65 +4,161 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Léonor De Castro | Portfolio IT</title>
-  <style>
-    :root{
-      --bg1:#0b1020; --bg2:#101b3a;
-      --card: rgba(255,255,255,.08);
-      --txt: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
-      --accent1:#8b5cf6; --accent2:#22d3ee;
-      --border: rgba(255,255,255,.14);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--txt);
-      background: radial-gradient(1200px 700px at 10% 10%, rgba(139,92,246,.35), transparent 60%),
-                  radial-gradient(900px 600px at 90% 20%, rgba(34,211,238,.25), transparent 60%),
-                  linear-gradient(180deg,var(--bg1),var(--bg2));
-      min-height:100vh;
-    }
-    .wrap{max-width:980px; margin:0 auto; padding:32px 18px 64px}
-    .top{
-      display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;
-    }
-    .badge{
-      padding:10px 14px; border:1px solid var(--border); border-radius:999px;
-      background:rgba(255,255,255,.06); color:var(--muted); font-size:14px;
-    }
-    .hero{margin-top:26px}
-    h1{font-size:38px; line-height:1.1; margin:0}
-    .subtitle{margin:10px 0 0; color:var(--muted); font-size:16px; max-width:70ch}
-    .cta{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap}
-    a.btn{
-      text-decoration:none; color:var(--txt); font-weight:600;
-      padding:12px 14px; border-radius:12px; border:1px solid var(--border);
-      background:rgba(255,255,255,.06);
-    }
-    a.btn.primary{
-      border:none;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      color:#061018;
-    }
-    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px; margin-top:28px}
+ <style>
+  :root{
+    --bg1:#0b1020; 
+    --bg2:#101b3a;
+    --card: rgba(255,255,255,.08);
+    --txt: rgba(255,255,255,.92);
+    --muted: rgba(255,255,255,.72);
+    --accent1:#8b5cf6; 
+    --accent2:#22d3ee;
+    --border: rgba(255,255,255,.14);
+  }
+
+  *{box-sizing:border-box}
+
+  body{
+    margin:0; 
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    color:var(--txt);
+    background:
+      radial-gradient(1200px 700px at 10% 10%, rgba(139,92,246,.35), transparent 60%),
+      radial-gradient(900px 600px at 90% 20%, rgba(34,211,238,.25), transparent 60%),
+      linear-gradient(180deg,var(--bg1),var(--bg2));
+    min-height:100vh;
+  }
+
+  .wrap{
+    max-width:980px; 
+    margin:0 auto; 
+    padding:32px 18px 64px;
+  }
+
+  .top{
+    display:flex; 
+    gap:16px; 
+    align-items:center; 
+    justify-content:space-between; 
+    flex-wrap:wrap;
+  }
+
+  .badge{
+    padding:10px 14px; 
+    border:1px solid var(--border); 
+    border-radius:999px;
+    background:rgba(255,255,255,.06); 
+    color:var(--muted); 
+    font-size:14px;
+  }
+
+  .hero{margin-top:26px}
+
+  h1{
+    font-size:38px; 
+    line-height:1.1; 
+    margin:0;
+  }
+
+  .subtitle{
+    margin:10px 0 0; 
+    color:var(--muted); 
+    font-size:16px; 
+    max-width:70ch;
+  }
+
+  .cta{
+    margin-top:18px; 
+    display:flex; 
+    gap:10px; 
+    flex-wrap:wrap;
+  }
+
+  a.btn{
+    text-decoration:none; 
+    color:var(--txt); 
+    font-weight:600;
+    padding:12px 14px; 
+    border-radius:12px; 
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.06);
+  }
+
+  a.btn.primary{
+    border:none;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color:#061018;
+  }
+
+  .grid{
+    display:grid; 
+    grid-template-columns:repeat(12,1fr); 
+    gap:14px; 
+    margin-top:28px;
+  }
+
+  .card{
+    grid-column: span 6;
+    padding:16px; 
+    border:1px solid var(--border); 
+    border-radius:18px;
+    background: var(--card); 
+    backdrop-filter: blur(10px);
+  }
+
+  .card h3{
+    margin:0 0 8px; 
+    font-size:16px;
+  }
+
+  .card p{
+    margin:0; 
+    color:var(--muted); 
+    font-size:14px; 
+    line-height:1.5;
+  }
+
+  .section{margin-top:30px}
+
+  .section h2{
+    font-size:18px; 
+    margin:0 0 12px;
+  }
+
+  ul{
+    margin:0; 
+    padding-left:18px; 
+    color:var(--muted);
+  }
+
+  /* 🔥 Correction section Projets */
+  .projects .card{
+    grid-column: span 6;
+  }
+
+  .projects .grid{
+    justify-items: stretch;
+  }
+
+  .footer{
+    margin-top:40px; 
+    color:var(--muted); 
+    font-size:13px;
+  }
+
+  @media (max-width:760px){
     .card{
-      grid-column: span 6;
-      padding:16px; border:1px solid var(--border); border-radius:18px;
-      background: var(--card); backdrop-filter: blur(10px);
+      grid-column: span 12;
     }
-    .card h3{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.5}
-    .section{margin-top:30px}
-    .section h2{font-size:18px; margin:0 0 12px}
-    ul{margin:0; padding-left:18px; color:var(--muted)}
-    .projects .card{grid-column:span 4}
-    .footer{margin-top:40px; color:var(--muted); font-size:13px}
-    @media (max-width:760px){
-      .card{grid-column:span 12}
-      .projects .card{grid-column:span 12}
-      h1{font-size:32px}
+    .projects .card{
+      grid-column: span 12;
     }
-  </style>
+    h1{
+      font-size:32px;
+    }
+  }
+</style>
+
 </head>
 <body>
   <div class="wrap">
@@ -109,11 +205,6 @@
     <div class="section projects" id="projets">
       <h2>Projets / Labs</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Windows 11 sur matériel non compatible</h3>
-          <p>Procédure + reproduction en VM pour documentation.</p>
-          <p><a class="btn" href="https://github.com/leonordecastro-it/IT-Portfolio" target="_blank" rel="noreferrer">Voir</a></p>
-        </div>
         <div class="card">
           <h3>Labs FORMIP</h3>
           <p>TP reformulés + captures + compétences démontrées.</p>
