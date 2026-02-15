@@ -4,159 +4,105 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Léonor De Castro | Portfolio IT</title>
- <style>
-  :root{
-    --bg1:#0b1020; 
-    --bg2:#101b3a;
-    --card: rgba(255,255,255,.08);
-    --txt: rgba(255,255,255,.92);
-    --muted: rgba(255,255,255,.72);
-    --accent1:#8b5cf6; 
-    --accent2:#22d3ee;
-    --border: rgba(255,255,255,.14);
-  }
+  <style>
+:root{
+  --bg1:#0b1020;
+  --bg2:#101b3a;
+  --card: rgba(255,255,255,.08);
+  --txt: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+  --accent1:#8b5cf6;
+  --accent2:#22d3ee;
+  --border: rgba(255,255,255,.14);
+}
 
-  *{box-sizing:border-box}
+*{box-sizing:border-box}
 
-  body{
-    margin:0; 
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    color:var(--txt);
-    background:
-      radial-gradient(1200px 700px at 10% 10%, rgba(139,92,246,.35), transparent 60%),
-      radial-gradient(900px 600px at 90% 20%, rgba(34,211,238,.25), transparent 60%),
-      linear-gradient(180deg,var(--bg1),var(--bg2));
-    min-height:100vh;
-  }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--txt);
+  background:
+    radial-gradient(1200px 700px at 10% 10%, rgba(139,92,246,.35), transparent 60%),
+    radial-gradient(900px 600px at 90% 20%, rgba(34,211,238,.25), transparent 60%),
+    linear-gradient(180deg,var(--bg1),var(--bg2));
+  min-height:100vh;
+}
 
-  .wrap{
-    max-width:980px; 
-    margin:0 auto; 
-    padding:32px 18px 64px;
-  }
+.wrap{max-width:980px; margin:0 auto; padding:32px 18px 64px}
 
-  .top{
-    display:flex; 
-    gap:16px; 
-    align-items:center; 
-    justify-content:space-between; 
-    flex-wrap:wrap;
-  }
+.top{
+  display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+}
 
-  .badge{
-    padding:10px 14px; 
-    border:1px solid var(--border); 
-    border-radius:999px;
-    background:rgba(255,255,255,.06); 
-    color:var(--muted); 
-    font-size:14px;
-  }
+.badge{
+  padding:10px 14px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  color:var(--muted);
+  font-size:14px;
+}
 
-  .hero{margin-top:26px}
+.hero{margin-top:26px}
 
-  h1{
-    font-size:38px; 
-    line-height:1.1; 
-    margin:0;
-  }
+h1{font-size:38px; line-height:1.1; margin:0}
 
-  .subtitle{
-    margin:10px 0 0; 
-    color:var(--muted); 
-    font-size:16px; 
-    max-width:70ch;
-  }
+.subtitle{margin:10px 0 0; color:var(--muted); font-size:16px; max-width:70ch}
 
-  .cta{
-    margin-top:18px; 
-    display:flex; 
-    gap:10px; 
-    flex-wrap:wrap;
-  }
+.cta{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap}
 
-  a.btn{
-    text-decoration:none; 
-    color:var(--txt); 
-    font-weight:600;
-    padding:12px 14px; 
-    border-radius:12px; 
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.06);
-  }
+a.btn{
+  text-decoration:none;
+  color:var(--txt);
+  font-weight:600;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.06);
+}
 
-  a.btn.primary{
-    border:none;
-    background: linear-gradient(90deg, var(--accent1), var(--accent2));
-    color:#061018;
-  }
+a.btn.primary{
+  border:none;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color:#061018;
+}
 
-  .grid{
-    display:grid; 
-    grid-template-columns:repeat(12,1fr); 
-    gap:14px; 
-    margin-top:28px;
-  }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:14px;
+  margin-top:28px;
+}
 
-  .card{
-    grid-column: span 6;
-    padding:16px; 
-    border:1px solid var(--border); 
-    border-radius:18px;
-    background: var(--card); 
-    backdrop-filter: blur(10px);
-  }
+.card{
+  grid-column: span 6;
+  padding:16px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background: var(--card);
+  backdrop-filter: blur(10px);
+}
 
-  .card h3{
-    margin:0 0 8px; 
-    font-size:16px;
-  }
+.card h3{margin:0 0 8px; font-size:16px}
+.card p{margin:0; color:var(--muted); font-size:14px; line-height:1.5}
 
-  .card p{
-    margin:0; 
-    color:var(--muted); 
-    font-size:14px; 
-    line-height:1.5;
-  }
+.section{margin-top:30px}
+.section h2{font-size:18px; margin:0 0 12px}
 
-  .section{margin-top:30px}
+ul{margin:0; padding-left:18px; color:var(--muted)}
 
-  .section h2{
-    font-size:18px; 
-    margin:0 0 12px;
-  }
+/* ✅ Projets : 2 cartes larges */
+.projects .card{ grid-column: span 6; }
+.projects .grid{ justify-items: stretch; }
 
-  ul{
-    margin:0; 
-    padding-left:18px; 
-    color:var(--muted);
-  }
+.footer{margin-top:40px; color:var(--muted); font-size:13px}
 
-  /* 🔥 Correction section Projets */
-  .projects .card{
-    grid-column: span 6;
-  }
-
-  .projects .grid{
-    justify-items: stretch;
-  }
-
-  .footer{
-    margin-top:40px; 
-    color:var(--muted); 
-    font-size:13px;
-  }
-
-  @media (max-width:760px){
-    .card{
-      grid-column: span 12;
-    }
-    .projects .card{
-      grid-column: span 12;
-    }
-    h1{
-      font-size:32px;
-    }
-  }
+@media (max-width:760px){
+  .card{ grid-column: span 12; }
+  .projects .card{ grid-column: span 12; }
+  h1{ font-size:32px; }
+}
 </style>
 
 </head>
@@ -169,7 +115,7 @@
 
     <div class="hero">
       <h1>Léonor De Castro</h1>
-      <p class="subtitle">
+      <p class=".subtitle">
         Technicienne Support Informatique (en formation) — préparation CompTIA A+.
         J’organise ici mes labs (FORMIP), mes dépannages et mes projets pratiques.
       </p>
